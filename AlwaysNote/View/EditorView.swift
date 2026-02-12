@@ -1,0 +1,18 @@
+//
+//  EditorView.swift
+//  AlwaysNote
+//
+//  Created by Kief on 12/02/2026.
+//
+
+import SwiftUI
+
+struct EditorView: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+#Preview {
+    EditorView()
+}
