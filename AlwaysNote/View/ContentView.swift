@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var fontSize: CGFloat = 18
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            HeaderView()
+            VStack {
+                TitleView()
+                ButtonView(decreaseAction: {
+                    decreaseFontSize() })
+                EditorView(fontSize: $fontSize)
+            }
         }
-        .padding()
+    }
+    
+    
+    func decreaseFontSize() {
+        fontSize = max(fontSize - 1, 8)
     }
 }
 

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct TitleView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("AlwaysNote")
+                .font(.custom("Hoefler Text", size: 60))
+                .foregroundStyle(.yellow)
+        }
     }
 }
 

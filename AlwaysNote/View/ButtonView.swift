@@ -8,9 +8,45 @@
 import SwiftUI
 
 struct ButtonView: View {
+    //var editorView = EditorView(fontSize: 18)
+    var decreaseAction: () -> Void = {}
+    var increaseAction: () -> Void = {}
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Button {
+                print("Button save tapped")
+            } label: {
+                Text("Save")
+                    .padding()
+            }
+            
+            Spacer()
+            Spacer()
+            
+            Button {
+               decreaseAction()
+        
+            } label: {
+                Text("a")
+                    .padding()
+            }
+            
+            Spacer()
+            
+            Button {
+                print("Button A tapped")
+            } label: {
+                Text("A")
+                    .padding()
+            }
+        }
+        .padding()
+        
+        Spacer()
     }
+    
+
 }
 
 #Preview {

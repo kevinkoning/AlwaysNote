@@ -9,8 +9,10 @@ import SwiftUI
 
 struct HeaderView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Color(red: 1.0, green: 1.0, blue: 0.88)
+            .ignoresSafeArea()
     }
+        
 }
 
 #Preview {
