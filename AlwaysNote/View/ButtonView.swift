@@ -11,11 +11,12 @@ struct ButtonView: View {
     //var editorView = EditorView(fontSize: 18)
     var decreaseAction: () -> Void = {}
     var increaseAction: () -> Void = {}
+    var saveAction: () -> Void = {}
 
     var body: some View {
         HStack {
             Button {
-                print("Button save tapped")
+                saveAction()
             } label: {
                 Text("Save")
                     .padding()
@@ -35,7 +36,7 @@ struct ButtonView: View {
             Spacer()
             
             Button {
-                print("Button A tapped")
+                increaseAction()
             } label: {
                 Text("A")
                     .padding()

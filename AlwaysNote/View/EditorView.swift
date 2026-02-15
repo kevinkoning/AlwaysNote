@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditorView: View {
     @Binding var fontSize: CGFloat
-    @State private var noteContents = "Lieve dagboek, \nVandaag heb ik op Avans geleerd hoe ik een notitie app moet maken."
+    @Binding var noteContents: String
     
     var body: some View {
         TextEditor(text: $noteContents)
@@ -25,5 +25,6 @@ struct EditorView: View {
 
 #Preview {
     @State var a : CGFloat = 18
-    EditorView(fontSize: $a)
+    @State var b : String = "This is a note. You can edit it!"
+    EditorView(fontSize: $a, noteContents: $b)
 }
