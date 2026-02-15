@@ -17,6 +17,7 @@ struct ContentView: View {
     @State var noteContents: String = "This is a note. You can edit it!"
     @State var showAlert = false
     @State var alertMessage: String = ""
+    @Environment(\.verticalSizeClass) var sizeClass
     let fontSizeKey = "nl.avans.alwaysnote.fontsize"
     let fileName = "note.txt"
     
@@ -24,16 +25,28 @@ struct ContentView: View {
         ZStack {
             HeaderView()
             VStack {
-                TitleView()
-                ButtonView(decreaseAction: {
-                    decreaseFontSize() }, increaseAction: {
-                        increaseFontSize()
-                    }, saveAction: {
-                        saveNote()
-                    })
-                        
-                        EditorView(fontSize: $fontSize, noteContents: $noteContents)
+                if(sizeClass == .compact) {
+                    HStack {
+                        TitleView()
+                        ButtonView(decreaseAction: {
+                            decreaseFontSize() }, increaseAction: {
+                                increaseFontSize()
+                            }, saveAction: {
+                                saveNote()
+                            })
                     }
+                }
+                else {
+                    TitleView()
+                    ButtonView(decreaseAction: {
+                        decreaseFontSize() }, increaseAction: {
+                            increaseFontSize()
+                        }, saveAction: {
+                            saveNote()
+                        })
+                }
+                EditorView(fontSize: $fontSize, noteContents: $noteContents)
+                }
             }
             .onAppear { initView() }
             .alert(isPresented: $showAlert, content: {

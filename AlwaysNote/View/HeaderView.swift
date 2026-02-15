@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     var body: some View {
-        Color(red: 1.0, green: 1.0, blue: 0.88)
+        Color("FlexLabelBackgroundColor")
             .ignoresSafeArea()
     }
         
